@@ -1,0 +1,58 @@
+{% load static %}
+<!--loading static files-->
+{% load bootstrap4 %}
+<!--loading bootstrap4-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bus Search</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <!--<link type="text/css" rel="stylesheet" href="{% static 'mysite/bootstrap.min.css' %}">-->
+    <!--linking page to static files-->
+    <link rel="stylesheet" type="text/css" href="{% static 'find_bus_style.css' %}">
+</head>
+
+<body>
+    <div id="booking" class="section">
+        <div class="section-center">
+            <div class="container">
+                <div class="row">
+                    <div class="booking-form">
+                        <div class="form-header">
+                            <h1>View Available Buses</h1>
+                        </div>
+                        <form action="{% url 'show' %}" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <table>
+                                <tr>
+                                    <th>NUMBER PLATE</th>
+                                    <th>SEAT NUMBER</th>
+                                </tr>
+                                {% for bus in buses_query %}
+                                <tr>
+                                    <td>{{ bus.number_plate }}</td>
+                                    <td>{{ bus.seat_number }}</td>
+                                </tr>
+                                {% endfor %}
+                            </table>
+                            <!--<div>
+                                <span class="form-label">NUMBER PLATE</span>
+                                <input name="number_plate" class="form-control" id="example-email-input" placeholder="Seat Number.." value="{{ buses.number_plate }}">
+                            </div>
+                            <div class="form-group">
+                                <span class="form-label">SEAT NUMBER</span>
+                                <input name='seat_number' class="form-control" id="example-email-input" placeholder="Seat Number" value="{{ buses.seat_number}}">
+                            </div>-->
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

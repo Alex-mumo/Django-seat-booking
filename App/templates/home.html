@@ -1,0 +1,34 @@
+ {% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>student details</title>
+    <meta charset="utf-8">
+    <meta >
+    <link rel="stylesheet" type="text/css" href="{% static 'home_style.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <h2>STUDENT DETAILS</h2>
+        <form>
+            <label>
+                STUDENT NAME
+                <input type="text" id="studentName">
+            </label><br><br>
+            <label>
+                PHONE NUMBER
+                <input type="tel" min="10" max="13" id="phoneNumber">
+            </label><br><br>
+
+            <label>
+                STUDENT ID
+                <input type="text" id="studentId">
+            </label><br><br>
+
+            <input type="button" id="submit" value="submit">
+        </form>
+    </div>
+</body>
+
+</html>

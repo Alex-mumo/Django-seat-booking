@@ -1,0 +1,21 @@
+form{
+	box-shadow: 0 0 20px #999;
+	margin-bottom: 25px;
+	width: 500px;
+	height: 80vh;
+	justify-content: center;
+	padding: 10px;
+	align-items: center;
+}
+h2{
+	align-items: center;
+	background-color: rgb(29, 54, 125);
+	box-shadow: 0 0 20px #999;
+	width: 500px;
+	align-items: center;
+	justify-content: center;
+}
+p{
+	justify-content: center;
+}
+

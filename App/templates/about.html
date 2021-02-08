@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>About Us</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--loading static files-->
+	{% load static %}
+	<!--loading bootstrap4-->
+	{% load bootstrap4 %}
+	<!--loading about.css code-->
+	<link rel="stylesheet" type="text/css" href="{% static 'about.css'%}">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+	<section id="aboutus">
+	   <div class="container">
+	      <div class="row">
+		 <div class="col-sm-7">
+		    <h1 class="text-center">ABOUT US</h1>
+		    <h2 class="text-center">WELCOME TO DKUT BUS BOOKING</h2>
+		    <p>Our vision is to offer world-class transportation services in an innovative way while harnessing
+		      the use of technology to delight retain and defend our clients.
+		    </p>
+		    <p>DKUT BUS BOOKING is a system that provides sudents with an online medium to get to know the car travelling at a specific time, i.e from their locality/source. to their destination.
+		  The system is run and managed by the Nyeri travel admin.</p>
+		    <p>With the earlier experience where students were not able to board a bus to and fro the university, 
+		     the sytem was developed to reduce that issue and enable students to book a bus and their specific travelling time.
+		 </p><br><br>
+		 <p class="text-center">
+		    <cite>
+ 			<q>Once the travel bug bites there is no known antidote,
+		    and I know that I shall be happily infected until the end of my life</q>
+		    </cite><br> ~Michael Palin
+		</p>
+		</div>
+		<div class="col-sm-5">
+		  <div class="img-wrap">
+		  	<!--loading image-->
+		    <img src="{% static 'dekut.jpg' %}">
+		  </div>
+		</div>	
+	    </div>
+	</div>
+	</section>
+</body>
+</html>

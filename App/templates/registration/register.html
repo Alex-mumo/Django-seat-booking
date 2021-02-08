@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--tag to load static files-->
+    {% load static %}  
+    {% load bootstrap4 %}
+    <!--loading css code-->
+    <link rel="stylesheet" type="text/css" href="{% static 'register_style.css' %}">
+	<title> Registration </title>
+</head>
+<body>
+<div>
+    <h2>Registration  Page !</h2>
+    <form method="POST" action="{% url 'register' %}" enctype="multipart/form-data">
+        {% csrf_token %} <!--security token-->
+        {{form.username.label }}
+        {{form.username}} <br>
+        {{form.password1.label}}
+        {{form.password1}}<br>
+        {{form.password2.label}}
+        {{form.password2}}<br>
+        <input type="submit" name="Sign Up"><br>
+        {% for message in messages %}
+            <p>{{message}}</p>
+        {% endfor %}     
+        {{ form.errors}}          
+        <p>Aready have an account <a href="{% url 'login' %}">Login</a></p>       
+    </form> 
+</div>
+</body>
+</html>

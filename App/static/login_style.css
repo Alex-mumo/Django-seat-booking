@@ -1,0 +1,24 @@
+h2{
+    width: 500px;
+    box-shadow: 0 0 20px #999;
+    align-items: center;
+    position: center;
+    background-color: rgb(29, 54, 125);
+}
+form{
+    width: 500px;
+    height: 80vh;
+    /*background-color: rgb(29, 54, 125);*/
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px #999;
+    padding: 10px;
+    position: center;
+    margin-top: 25px;
+}
+button{
+    text-align: center;
+    position: center;
+    background-color: #272b91;
+}
+

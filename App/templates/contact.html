@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--loading static files-->
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'contact_style.css' %}">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	 }
+	 body{
+		background-color: #efefef;
+		font-family: sans-serif;
+	}
+	h2{
+		background-color: rgb(27, 85, 143);
+		text-align: center;
+		padding: 20px;
+	}
+
+	.contact-box {
+		width: 500px;
+		height: 650px;
+		background-color: #fff;
+		box-shadow: 0 0 20px 0 #999;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		position: absolute;
+	}
+	form{
+		margin: 35px;
+	}
+
+
+	.input-field{
+		width: 400px;
+		height: 40px;
+		margin-top:20px;
+		padding-left: 10px;
+		padding-right: 10px;
+		border: 1px solid #777; 
+		border-radius: 14px;
+		outline: none;
+		text-transform: lowercase;
+	}
+
+	.textarea-field {
+		height: 150px;
+		padding-top: 10px;
+		resize: vertical;
+		overflow: hidden;
+	}
+
+	.btn{
+  		width: 45%;
+  		border-radius: 8px;
+  		color: #fff;
+  		margin-top: 18px;
+  		padding: 15px;
+  		background-color: #47c35a;
+  		font-size: 12px;
+  		border: none;
+  		cursor: pointer;
+}
+
+	.btn:hover{
+		background-color: rgb(214, 226, 236);
+		color: rgb(27, 166,247);
+}
+	</style>
+	<!--loading css code-->
+	<title>Help Center</title>
+</head>
+<body>
+	<div class="contact-box">
+		<h2>CONTACT US</h2>
+		<form  action="{% url 'contact' %}" method="POST" enctype="multipart/form-data">
+			{% csrf_token %} <!--for security concerns-->
+			<input type="text" class="input-field" name="name" id="name" placeholder="YOUR NAME" required>
+			<input type="email" class="input-field" name="email" id="email" placeholder="YOUR EMAIL ADDRESS" required>
+			<input type="text" class="input-field" name="subject" id="subject" placeholder="SUBJECT/ISSUE" required>
+			<textarea type="text" class="input-field textarea-field" name="message" id="message" placeholder="MESSAGE" required></textarea>
+			<button type="submit" class="btn">SEND MESSAGE</button>
+			{% for message in messages %}
+				{{message}}
+			{% endfor%}
+		</form>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,38 @@
+body{
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+#aboutus{ 
+padding:10px;
+box-shadow: 0 0 20px #999;
+}
+
+#aboutus h2{
+margin-bottom: 25px;
+}
+
+h1{
+background-color: rgb(29, 54, 125);
+padding:10px;
+box-shadow: 0 0 20px #999;
+width: 100%;
+}
+
+img{
+padding-top: 20px;
+}
+
+.img-wrap{
+width: 100%;
+}
+
+.img-wrap img{
+width: 100%;
+margin-top: 90px;
+padding-top: 25px;
+align-content: center;
+box-shadow: 0 0 20px #999;
+}

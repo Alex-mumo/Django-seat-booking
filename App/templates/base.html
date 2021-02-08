@@ -1,0 +1,60 @@
+{% load static %}
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" , initial-scale=1.0, shrink-to-fit=no>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--loading static files-->
+    <!--loading css code-->
+    <link rel="stylesheet" type="text/css" href="{% static 'base_style.css' %}">
+    {% if title%}
+    <title>Student Bus Reservation - {{ title }}</title>
+    {% else %}
+    <title>Student Bus Reservation</title>
+    {% endif %}
+    <style>
+        img {
+            background-size: 100% 100%;
+            height: auto;
+            opacity: 10;
+            width: 100%;
+        }
+
+        img:hover {
+            transform: scaleX()
+        }
+    </style>
+</head>
+
+<body>
+    <!--navigation bar-->
+    <section>
+        <div class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="{% url 'base' %}">Home</a></li>
+                    <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                    <li><a href="{% url 'about' %}">About Us</a></li>
+                    <li><a href="{% url 'register' %}">Register</a></li>
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                    <li><a href="{% url 'findbus' %}">FindBus</a></li>
+                    <li><a href="{% url 'show' %}">View Buses</a></li>
+                    {% if user.is_authenticated %}
+                    <span>Hello, {{ request.user}}</span>
+                    {% endif %}
+                    <span><a href="{% url 'logout' %}">Logout</a></span>
+                    <!--logout functionality-->
+                    <!--<input type="text" placeholder="Seach..." class="search">-->
+                </ul>
+            </nav>
+            <img src="{% static 'download.jpeg' %}">
+
+        </div>
+    </section>
+
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+{% load static %}
+<!--loading static files-->
+{% load bootstrap4 %}
+<!--loading bootstrap4-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bus Search</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <!--<link type="text/css" rel="stylesheet" href="{% static 'mysite/bootstrap.min.css' %}">-->
+    <link rel="stylesheet" type="text/css" href="{% static 'find_bus_style.css' %}">
+</head>
+
+<body>
+    <div id="booking" class="section">
+        <div class="section-center">
+            <div class="container">
+                <div class="row">
+                    <div class="booking-form">
+                        <div class="form-header">
+                            <h1>Book Seat</h1>
+                        </div>
+                        <form action="{% url 'findbus' %}" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div>
+                                <span class="form-label">SEAT NUMBER</span>
+                                <input type="number" name="seat_number" class="form-control" id="example-email-input" placeholder="Seat Number.." value="{{ form.seat_number}}">
+                            </div>
+                            <div class="form-group">
+                                <span class="form-label">TRAVEL TIME</span>
+                                <input name='travel_time' class="form-control" type="date" id="example-email-input" placeholder="Enter Travel time..." value="{{ form.travel_time}}">
+                            </div>
+                            <div class="form-group">
+                                <span class="form-label">SOURCE</span>
+                                <input type="string" name='source' class="form-control" id="example-email-input" placeholder="Enter source..." value="{{ form.source}}">
+                            </div>
+                            <div class="form-group">
+                                <span class="form-label">DESTINATION</span>
+                                <input type="string" name="destination" class="form-control" id="example-email-input" placeholder="Enter destination.." value="{{ form.destination}}">
+                            </div>
+                            <div class="form-group">
+                                <span class="form-label">STUDENT ID</span>
+                                <input type="string" name="student_id" class="form-control" id="example-email-input" placeholder="Enter Student ID..." value="{{ form.student_id}}">
+                            </div>
+                            <div class="form-btn">
+                                <button class="submit-btn" type="submit" value="Submit">Book Bus</button>
+                            </div>
+                            {% for message in messages%}
+                            <p>{{message}}</p>
+                            {% endfor %}
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
